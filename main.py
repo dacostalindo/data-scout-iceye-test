@@ -21,7 +21,7 @@ def build_data_keys(table):
 def fill_data_dict(data_dict, table):
     array_json_objects = []
     data = table.find_all('tr')[2:]
-    if len(table.find_all('tr')) > 3:
+    if len(table.find_all('td')) != 1:
         primary_columns = list(data_dict.keys())
         secondary_columns = list(data_dict[primary_columns[5]].keys())
         for data_row in data:
@@ -72,5 +72,4 @@ def main():
 
 
 if __name__ == '__main__':
-
     main()
